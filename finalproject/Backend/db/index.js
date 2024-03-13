@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const mysql = require('mysql2');
 
-const connection = new Sequelize('finalproject', 'root', 'root', {
+const connection = new Sequelize('finalproject', 'root', 'nour123', {
     host: 'localhost',
     dialect: 'mysql'
 });
@@ -108,15 +108,15 @@ const Forum = connection.define('forum', {
     },
     image_url: {
         type: DataTypes.STRING(45),
-        allowNull: false
+        allowNull: true
     },
-    createdat: {
+    category: {
         type: DataTypes.STRING(45),
         allowNull: false
-    }
+    },
 }, {
     freezeTableName: true,
-    timestamps: false
+    timestamps: true
 });
 
 const Comments = connection.define('comment', {
@@ -391,11 +391,11 @@ Request.hasMany(UserHasRequest);
 UserHasRequest.belongsTo(Request);
 
 
-Conversation.hasMany(Participants);
-Participants.belongsTo(Conversation);
+// Conversation.hasMany(Participants);
+// Participants.belongsTo(Conversation);
 
-User.hasMany(Participants);
-Participants.belongsTo(User);
+// User.hasMany(Participants);
+// Participants.belongsTo(User);
 
 
 //connection.sync({alter: true})
@@ -406,15 +406,14 @@ module.exports = {
   Forum,
   Comments,
   Conversation,
+  Image,
+  Payment,
+  Notification,
   Request,
-  Images,
-  Messages,
-  Notifications,
-  Paiment,
   Professional,
   ProfessionalHasRequest,
   UserHasRequest,
-  Participants,
+//   Participants,
   Car,
   connection
 };

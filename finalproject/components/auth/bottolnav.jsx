@@ -23,7 +23,7 @@ const Nav=()=>{
         <Text style={styles.iconText}>Spare Parts </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Professional')}>
+      <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('RequestUser')}>
         <Icon name="clipboard" size={30} color="black" />
         <Text style={styles.iconText}>Request </Text>
       </TouchableOpacity>
