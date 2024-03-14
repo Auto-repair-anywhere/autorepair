@@ -391,11 +391,11 @@ Request.hasMany(UserHasRequest);
 UserHasRequest.belongsTo(Request);
 
 
-Conversation.hasMany(Participants);
-Participants.belongsTo(Conversation);
+// Conversation.hasMany(Participants);
+// Participants.belongsTo(Conversation);
 
-User.hasMany(Participants);
-Participants.belongsTo(User);
+// User.hasMany(Participants);
+// Participants.belongsTo(User);
 
 
 //connection.sync({alter: true})
@@ -407,14 +407,13 @@ module.exports = {
   Comments,
   Conversation,
   Request,
-  Images,
-  Messages,
-  Notifications,
-  Paiment,
+  Image,
+  Message,
+  Notification,
+  Payment,
   Professional,
   ProfessionalHasRequest,
   UserHasRequest,
-  Participants,
   Car,
   connection
 };
